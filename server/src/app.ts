@@ -1,7 +1,7 @@
-import express from 'express';
-import cors from 'cors';
-import expressMongoSanitize from 'express-mongo-sanitize';
 import bodyParser from 'body-parser';
+import cors from 'cors';
+import express from 'express';
+import expressMongoSanitize from 'express-mongo-sanitize';
 
 const app = express();
 app.use(cors({ origin: true }));

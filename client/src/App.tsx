@@ -1,9 +1,12 @@
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { TodoGraphql } from './pages/TodoGraphql/TodoGraphql';
+
 export const App = () => {
   return (
-    <div>
-      <p> App </p>
-      <p> App </p>
-      <p> App </p>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<TodoGraphql />} />
+      </Routes>
+    </BrowserRouter>
   );
 };

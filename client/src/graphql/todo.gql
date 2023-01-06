@@ -1,0 +1,24 @@
+fragment Todo on Todo {
+  _id
+  title
+  description
+  active
+}
+
+query GetTodos {
+  getTodos {
+    ...Todo
+  }
+}
+
+mutation AddOrUpdateTodo($input: AddOrUpdateTodoInput!) {
+  addOrUpdateTodo(input: $input) {
+    ...Todo
+  }
+}
+
+mutation DeleteTodo($input: DeleteTodoInput!) {
+  deleteTodo(input: $input) {
+    ...MessageResponse
+  }
+}
