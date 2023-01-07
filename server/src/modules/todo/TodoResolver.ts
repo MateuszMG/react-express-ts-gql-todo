@@ -1,5 +1,5 @@
 import { Arg, Mutation, Query, Resolver } from 'type-graphql';
-import { Todo } from './todoModel';
+import { Todo } from './TodoModel';
 import { TodoService } from './TodoService';
 import { MessageResponse } from '../../apollo/globalTypes';
 import { AddOrUpdateTodoInput, DeleteTodoInput } from './todoInputs';

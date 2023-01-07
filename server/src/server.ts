@@ -22,7 +22,6 @@ async function bootstrap() {
   const { url } = await startStandaloneServer(await apolloServer(), {
     listen: { port: config.graphqlPort },
   });
-
   console.log(`Grapgql server ready at: ${url}`);
 }
 

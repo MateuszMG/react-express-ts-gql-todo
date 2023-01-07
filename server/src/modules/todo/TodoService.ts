@@ -1,16 +1,20 @@
-import { ITodo, Todo, TodoModel } from './todoModel';
+import { ITodo, Todo, TodoModel } from './TodoModel';
 import { AddOrUpdateTodoInput, DeleteTodoInput } from './todoInputs';
 import { MessageResponse } from '../../apollo/globalTypes';
+
+type Optional<T, K extends keyof T> = Partial<Pick<T, K>> & Omit<T, K>;
 
 export class TodoService {
   async getTodos(): Promise<Todo[]> {
     return await TodoModel.find({});
   }
 
-  async addOrUpdateTodo(input: AddOrUpdateTodoInput): Promise<Todo> {
-    console.log('input', input);
-
+  async addOrUpdateTodo(
+    input: Optional<AddOrUpdateTodoInput, '_id'>,
+  ): Promise<Todo> {
     if (!input?._id) {
+      Object.keys(input).includes('_id') && delete input._id;
+
       return await new TodoModel<ITodo>(input).save();
     } else {
       const { _id, ...rest } = input;

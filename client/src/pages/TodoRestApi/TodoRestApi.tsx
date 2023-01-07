@@ -1,4 +1,4 @@
-import { useTodoGraphql } from './useTodoGraphql';
+import { useTodoRestApi } from './useTodoRestApi';
 import {
   Button,
   ButtonWrapper,
@@ -14,9 +14,9 @@ import {
   Text,
   TextWrapper,
   TodosWrapper,
-} from './TodoGraphql.styled';
+} from './TodoRestApi.styled';
 
-export const TodoGraphql = () => {
+export const TodoRestApi = () => {
   const {
     handleActive,
     handleDelete,
@@ -24,7 +24,7 @@ export const TodoGraphql = () => {
     onSubmit,
     register,
     todos,
-  } = useTodoGraphql();
+  } = useTodoRestApi();
 
   return (
     <Container>

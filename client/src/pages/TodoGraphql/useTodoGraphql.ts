@@ -27,7 +27,6 @@ export const useTodoGraphql = () => {
   });
 
   const onSubmit = handleSubmit((data) => {
-    console.log('data', data);
     const { _id, ...rest } = data;
 
     addOrUpdate({
@@ -43,7 +42,7 @@ export const useTodoGraphql = () => {
     reset(createDefaultValues());
   });
 
-  const handleSetEdit = (input: AddOrUpdateTodoInput) => {
+  const handleSetTodoToEdit = (input: AddOrUpdateTodoInput) => {
     reset(input);
   };
 
@@ -58,7 +57,7 @@ export const useTodoGraphql = () => {
   return {
     handleActive,
     handleDelete,
-    handleSetEdit,
+    handleSetTodoToEdit,
     onSubmit,
     register,
     todos,
